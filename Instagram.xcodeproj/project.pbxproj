@@ -32,6 +32,8 @@
 		5A9D3DB41AAFE0EF0084E183 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9D3DB31AAFE0EF0084E183 /* libsqlite3.dylib */; };
 		5A9D3DB81AAFF1760084E183 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9D3D951AAFE06B0084E183 /* Bolts.framework */; };
 		5AA5404E1AF002150075ED47 /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5404D1AF002150075ED47 /* female.png */; };
+		5AA540501AF0727C0075ED47 /* feedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA5404F1AF0727C0075ED47 /* feedTableViewController.swift */; };
+		5AA540521AF073430075ED47 /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA540511AF073430075ED47 /* cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		5A9D3DB31AAFE0EF0084E183 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5A9D3DB51AAFE1B70084E183 /* Instagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instagram-Bridging-Header.h"; sourceTree = "<group>"; };
 		5AA5404D1AF002150075ED47 /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female.png; sourceTree = "<group>"; };
+		5AA5404F1AF0727C0075ED47 /* feedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feedTableViewController.swift; sourceTree = "<group>"; };
+		5AA540511AF073430075ED47 /* cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 				5A67DD8F1AF0001300ED7EFC /* postViewController.swift */,
 				5A67DD8D1AEFD8A800ED7EFC /* UserTableViewController.swift */,
 				5A9D3D781AAFDF5A0084E183 /* Main.storyboard */,
+				5AA540511AF073430075ED47 /* cell.swift */,
+				5AA5404F1AF0727C0075ED47 /* feedTableViewController.swift */,
 				5AA5404D1AF002150075ED47 /* female.png */,
 				5A9D3D941AAFE0440084E183 /* Frameworks */,
 				5A9D3D721AAFDF5A0084E183 /* Supporting Files */,
@@ -298,8 +304,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A67DD901AF0001300ED7EFC /* postViewController.swift in Sources */,
+				5AA540521AF073430075ED47 /* cell.swift in Sources */,
 				5A9D3D771AAFDF5A0084E183 /* ViewController.swift in Sources */,
 				5A67DD8E1AEFD8A800ED7EFC /* UserTableViewController.swift in Sources */,
+				5AA540501AF0727C0075ED47 /* feedTableViewController.swift in Sources */,
 				5A9D3D751AAFDF5A0084E183 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

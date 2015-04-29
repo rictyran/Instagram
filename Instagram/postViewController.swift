@@ -29,6 +29,14 @@ class postViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet var imageToPost: UIImageView!
 
+    @IBAction func logout(sender: AnyObject) {
+    
+        PFUser.logOut()
+        
+        self.performSegueWithIdentifier("logout", sender: self)
+    
+    
+    }
     @IBAction func chooseImage(sender: AnyObject) {
         
         var image = UIImagePickerController()

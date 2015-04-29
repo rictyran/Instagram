@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f59-UC-F7e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -166,6 +166,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="Q5j-sD-O2X">
+                        <barButtonItem key="leftBarButtonItem" title="View Feed" id="Edp-A4-B3f">
+                            <connections>
+                                <segue destination="iyx-kd-pgM" kind="show" id="AyY-Mj-DWg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="rHP-4r-Y4H">
                             <connections>
                                 <segue destination="f59-UC-F7e" kind="show" id="byZ-Gt-p7O"/>
@@ -176,6 +181,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsO-4y-I0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-924.5" y="-173.5"/>
+        </scene>
+        <!--Your Feed-->
+        <scene sceneID="rhZ-ee-RSc">
+            <objects>
+                <tableViewController title="Your Feed" id="iyx-kd-pgM" customClass="feedTableViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OGz-Vg-UaF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="230" id="nva-Jx-Dje" customClass="cell" customModule="Instagram" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nva-Jx-Dje" id="E0F-iU-pBZ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female.png" translatesAutoresizingMaskIntoConstraints="NO" id="c3Z-fh-XNk">
+                                            <rect key="frame" x="66" y="22" width="243" height="156"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="156" id="EgI-S8-Oc0"/>
+                                                <constraint firstAttribute="width" constant="243" id="hbz-za-Kyy"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aP-ba-Ozk">
+                                            <rect key="frame" x="8" y="202" width="359" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="359" id="1PY-KK-eY1"/>
+                                                <constraint firstAttribute="height" constant="21" id="xdj-Fe-SJy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTc-fV-Yg6">
+                                            <rect key="frame" x="8" y="186" width="359" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="2IG-2n-8BI"/>
+                                                <constraint firstAttribute="width" constant="359" id="8Vk-CI-iSf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" secondItem="c3Z-fh-XNk" secondAttribute="centerX" id="2Qm-Z3-anj"/>
+                                        <constraint firstItem="3aP-ba-Ozk" firstAttribute="top" secondItem="c3Z-fh-XNk" secondAttribute="bottom" constant="24" id="2e1-mL-xEk"/>
+                                        <constraint firstItem="c3Z-fh-XNk" firstAttribute="top" secondItem="E0F-iU-pBZ" secondAttribute="topMargin" constant="14" id="6KZ-zX-j1V"/>
+                                        <constraint firstItem="iTc-fV-Yg6" firstAttribute="top" secondItem="c3Z-fh-XNk" secondAttribute="bottom" constant="8" id="nGH-o0-1Y9"/>
+                                        <constraint firstAttribute="centerX" secondItem="3aP-ba-Ozk" secondAttribute="centerX" id="nZF-KT-Qyi"/>
+                                        <constraint firstAttribute="centerX" secondItem="iTc-fV-Yg6" secondAttribute="centerX" id="wwc-Qw-jOQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="postedImage" destination="c3Z-fh-XNk" id="6Y2-FM-ci7"/>
+                                    <outlet property="title" destination="iTc-fV-Yg6" id="5CS-SQ-XUg"/>
+                                    <outlet property="username" destination="3aP-ba-Ozk" id="WC5-iN-Jgw"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iyx-kd-pgM" id="G9x-9D-iSb"/>
+                            <outlet property="delegate" destination="iyx-kd-pgM" id="PnG-Qe-8Ym"/>
+                        </connections>
+                    </tableView>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vkr-XA-KRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-452.5" y="222.5"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="xb7-46-Xmb">
@@ -236,7 +311,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbf-Pi-Smt">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Logout" id="cKh-qb-imN"/>
+                                    <barButtonItem title="Logout" id="cKh-qb-imN">
+                                        <connections>
+                                            <action selector="logout:" destination="f59-UC-F7e" id="j0M-qN-lB0"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -259,11 +338,12 @@
                     <connections>
                         <outlet property="imageToPost" destination="RUX-c7-Pf2" id="oGa-pW-UdR"/>
                         <outlet property="shareText" destination="is9-Nq-KHc" id="4fp-As-3yW"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="logout" id="mI1-z5-K1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQG-fk-uxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460.5" y="-173.5"/>
+            <point key="canvasLocation" x="-452.5" y="-557.5"/>
         </scene>
         <!--NavController-->
         <scene sceneID="CzN-eT-BKs">

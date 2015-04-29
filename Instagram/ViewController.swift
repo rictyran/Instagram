@@ -17,7 +17,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func displayAlert(title:String, error:String) {
         
         var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
             
             self.dismissViewControllerAnimated(true, completion: nil)
             
@@ -112,6 +112,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     if signupError == nil {
                         
                         println("signed up")
+                        
+                        self.performSegueWithIdentifier("jumpToUserTable", sender: "self")
                     
                     } else {
                     
@@ -140,6 +142,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
                     if signupError == nil {
+                        
+                        self.performSegueWithIdentifier("jumpToUserTable", sender: "self")
                         
                         println("logged in")
                         
@@ -176,10 +180,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         if PFUser.currentUser() != nil {
             
-            self.performSegueWithIdentifier("jumpToUserTable", sender: self)
+            self.performSegueWithIdentifier("jumpToUserTable", sender: "self")
             
         }
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
     }
     
     
